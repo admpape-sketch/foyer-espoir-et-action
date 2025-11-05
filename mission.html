@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notre Mission - Foyer Espoir et Action</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* 🌿 RESET + STYLE GLOBAL */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Poppins', sans-serif; line-height:1.6; color:#222; background:#f5f9f6; }
+    a { text-decoration:none; }
+
+    /* HEADER */
+    header {
+      background:#016241;
+      color:#fff;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header h1 { font-size:1.3rem; }
+
+    /* MENU RESPONSIF */
+    .menu-icon { display:none; font-size:1.8rem; cursor:pointer; }
+    nav ul { list-style:none; display:flex; gap:1.5rem; }
+    nav a { color:#fff; font-weight:500; }
+
+    @media (max-width:768px){
+      nav ul { display:none; flex-direction:column; background:#024d32; position:absolute; top:60px; right:10px; width:200px; border-radius:8px; }
+      nav ul.active { display:flex; }
+      .menu-icon { display:block; }
+    }
+
+    /* SECTION MISSION */
+    .mission-section {
+      padding:3rem 10%;
+      background:linear-gradient(135deg, #e6f4ea, #ffffff);
+      text-align:center;
+      border-radius:16px;
+      margin:2rem auto;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .mission-section h2 {
+      color:#016241;
+      font-size:2rem;
+      margin-bottom:1rem;
+    }
+
+    .mission-section p {
+      max-width:800px;
+      margin:0 auto 2rem;
+      font-size:1.1rem;
+      color:#333;
+    }
+
+    /* IMAGE RESPONSIVE */
+    .mission-img {
+      width:100%;
+      max-width:800px;
+      height:auto;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.15);
+      margin:1.5rem auto;
+      display:block;
+    }
+
+    /* SITATION */
+    .quote {
+      background:#016241;
+      color:#fff;
+      padding:2rem;
+      border-radius:12px;
+      max-width:700px;
+      margin:2rem auto;
+      font-style:italic;
+      font-size:1.1rem;
+      position:relative;
+    }
+
+    .quote::before {
+      content:"“";
+      font-size:3rem;
+      position:absolute;
+      left:15px;
+      top:-10px;
+      color:#fff9;
+    }
+
+    .quote-author {
+      margin-top:1rem;
+      font-weight:600;
+      text-align:right;
+    }
+
+    /* BOUTON RETOUR */
+    .back-btn {
+      display:inline-block;
+      margin-top:1rem;
+      background:#016241;
+      color:#fff;
+      padding:0.7rem 1.2rem;
+      border-radius:6px;
+      font-weight:600;
+      transition:background 0.3s;
+    }
+    .back-btn:hover { background:#049c63; }
+
+    footer {
+      background:#016241;
+      color:#fff;
+      text-align:center;
+      padding:1rem;
+      margin-top:2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
+    <i class="fa-solid fa-bars menu-icon" id="menuBtn"></i>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mission.html" class="active">Mission</a></li>
+        <li><a href="staff.html">staff</a></li>
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="aider.html">comment aider</a></li>
+        <li><a href="publication.html">publication</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- CONTENU -->
+  <section class="mission-section">
+    <h2>Notre Mission</h2>
+    <p>
+      Le <strong>Foyer Espoir et Action</strong> œuvre pour renforcer les capacités des communautés haïtiennes
+      à travers des programmes intégrés de santé, d’éducation, d’entrepreneuriat et de protection de
+      l’environnement. Nous croyons en une approche centrée sur la dignité, la solidarité et l’autonomie durable.
+    </p>
+
+    <h2>Notre vision</h2>
+
+Nous envisageons un monde où la faim n’éxiste plus, où chaque entrepreneurs peu importe sa taille à acces aux ressources nécessaires pour progresser. Nous aspirons à une societé où la santé et l’éducation sont des droits accessibles à tous et où la planête est protegé pour les générations futures. 
+ 
+<h2>Notre valeur</h2>
+Inclusion, Equité, Solidarité, Durabilité.
+
+
+
+
+
+
+
+  
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
+            <p>No enrégistrement au MAST: <strong>STW-39322</strong></p>
+
+            <div class="socials">
+                <a href="mailto:Fea05985@gmail.com" title="Envoyer un email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a href="https://www.instagram.com/foyerespoir&action" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://x.com/fea404961392399" target="_blank" title="X (Twitter)">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
+                <a href="#" title="Chaîne YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

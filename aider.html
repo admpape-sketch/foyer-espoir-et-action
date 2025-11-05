@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment Aider - Foyer Espoir et Action</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #005f73;
+      color: #fff;
+      padding: 1rem 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a.active,
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, #0a9396, #94d2bd);
+      color: white;
+      padding: 3rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      padding: 2rem 10%;
+      text-align: center;
+      background: #fff;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h3 {
+      color: #005f73;
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background: #ee9b00;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ca6702;
+    }
+
+    footer {
+      text-align: center;
+      background: #005f73;
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #0a9396;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Foyer Espoir et Action</h1>
+    <div class="menu-toggle" id="hamburger">☰</div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mission.html">Notre Mission</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="aider.html" class="active">Comment Aider</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Chaque geste compte</h2>
+    <p>Que ce soit par un don, du bénévolat ou le partage de nos actions, vous pouvez contribuer à bâtir une Haïti plus solidaire et durable. Rejoignez notre mouvement d’espoir !</p>
+  </section>
+
+  <section class="section">
+    <h3>Faire un Don</h3>
+    <p>Vos dons financent nos programmes de santé, d’éducation et de développement communautaire.</p>
+    <a href="#" class="btn">Faire un Don</a>
+  </section>
+
+  <section class="section">
+    <h3>Devenir Volontaire</h3>
+    <p>Participez à nos projets éducatifs, environnementaux ou humanitaires sur le terrain.</p>
+    <a href="#" class="btn">Je M’engage</a>
+  </section>
+
+  <section class="section">
+    <h3>Partager et Sensibiliser</h3>
+    <p>Faites connaître notre action autour de vous. Chaque partage compte !</p>
+    <a href="#" class="btn">Partager</a>
+  </section>
+
+  <section class="section">
+    <h3>Votre soutien change des vies</h3>
+    <p>Ensemble, faisons grandir l’espérance.</p>
+    <a href="#" class="btn">Faire un Don</a>
+    <a href="#" class="btn">Devenir Volontaire</a>
+  </section>
+  <section class="coordonateur">
+            <img src="image8.jpg.jpg.jpg" alt="Coordonnateur Général" />
+            <div class="quote">
+                «  Notre force, c’est la solidarité. Quand nous agissons ensemble, tout devient possible. » »
+                <div class="quote-author">Joseph Jr. HENRY, Coordonnateur Général</div>
+            </div>
+            </section>
+   
+  <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
+            <p>No enrégistrement au MAST: <strong>STW-39322</strong></p>
+
+            <div class="socials">
+                <a href="mailto:Fea05985@gmail.com" title="Envoyer un email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a href="https://www.instagram.com/foyerespoir&action" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://x.com/fea404961392399" target="_blank" title="X (Twitter)">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
+                <a href="#" title="Chaîne YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+  <script>
+    const toggle = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>

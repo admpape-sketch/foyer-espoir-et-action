@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications - Foyer Espoir et Action</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7f9f8;
+      color: #222;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(90deg, #00784e, #00a870);
+      color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .logo i {
+      color: #ffda79;
+    }
+
+    /* MENU LINKS */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a {
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #ffda79;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 3px;
+    }
+
+    /* SECTION PRINCIPALE */
+    .publications {
+      padding: 3rem 10%;
+      text-align: center;
+      background: #fff;
+    }
+
+    .publications h2 {
+      color: #00784e;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .publications p {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* GRID DES PUBLICATIONS */
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pub-card {
+      background: #f1f9f5;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pub-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .pub-card video,
+    .pub-card audio,
+    .pub-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .pub-card h4 {
+      color: #00784e;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #004d32;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .socials a {
+      color: #fff;
+      margin: 0 0.6rem;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #ffda79;
+    }
+
+    footer p {
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        background: #00784e;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 1rem 0;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 0.8rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mission.html">Notre Mission</a></li>
+         <li><a href="staff.html">staff</a></li>
+         <li><a href="programmes.html">nos programmes</a></li>
+        <li><a href="aider.html">Comment Aider</a></li>
+        <li><a href="publications.html" class="active">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENU PUBLICATIONS -->
+  <section class="publications">
+    <h2>Nos Publications</h2>
+    <p>Découvrez les dernières vidéos, audios et articles produits par <strong>Foyer Espoir et Action</strong>.  
+    Ces contenus visent à informer, sensibiliser et inspirer à l’action collective.</p>
+
+    <div class="pub-grid">
+      <!-- Publication Vidéo -->
+      <div class="pub-card">
+        <video controls poster="image1.jpg.jpg.jpg">
+          <source src="video.mp4.mp4" type="video/mp4">
+                </video>
+        <h4>video encouragement</h4>
+        <p>never give up</p>
+      </div>
+
+      <!-- Publication Audio -->
+      <div class="pub-card">
+        <audio controls>
+          <source src="audio1.mp3" type="audio/mp3">
+          Votre navigateur ne supporte pas l’audio.
+        </audio>
+
+
+        <h4>Une parole d’encouragement du Coordonnateur Général</h4>
+        <p>Une parole d’encouragement du Coordonnateur Général aux bénévoles du Foyer Espoir et Action
+
+</p>Chers bénévoles,
+Chères amies et amis du Foyer Espoir et Action,
+
+</p>Je tiens à vous adresser, en mon nom et au nom de toute l’équipe de coordination, mes plus sincères félicitations et remerciements pour votre engagement exemplaire.
+Chaque sourire que vous offrez, chaque heure que vous consacrez, chaque geste que vous posez est une semence d’espérance qui fait grandir notre mission.
+
+Dans un contexte souvent difficile, vous demeurez les artisans silencieux du changement, les témoins vivants de la solidarité et de la foi en l’humain. Grâce à vous, notre foyer continue d’être un espace où l’action se joint à l’amour, et l’espérance devient réalité.
+
+Continuez à croire que chaque petit acte de bonté a un grand impact.
+Ensemble, nous faisons plus que servir : nous transformons des vies.
+
+Recevez toute ma gratitude, mon admiration et mes encouragements à poursuivre cette belle aventure humaine, avec la même passion et le même dévouement.
+
+</p>Avec respect et reconnaissance,
+
+
+</p>Joseph Jr. HENRY
+Coordonnateur Général
+Foyer Espoir et Action
+        </p>
+      </div>
+
+      <!-- Publication Image/Texte -->
+ 
+      <section class="publication">
+  <h2>Chronique Entrepreneuriat </h2>
+  <p>Découvrez notre nouvelle chronique : <strong>"Quand tout se ferme, ouvre ta propre porte"</strong>.</p>
+
+  <!-- Bouton de téléchargement -->
+  <a href="chronique entrepreneuriat pour les gagnants.pdf.pdf" 
+     class="btn-telecharger" 
+     download>
+    📥 Télécharger la chronique (PDF)
+  </a>
+
+  <!-- Section dons -->
+  <div class="don-section">
+    <h3>🤝 Soutenir le Foyer Espoir et Action</h3>
+    <p>Si ce texte vous a inspiré, vous pouvez faire un petit don pour soutenir nos actions.</p>
+
+    <!-- Bouton MonCash -->
+    <a href="https://wa.me/50939045395?text=Bonjou%20Mwen%20ta%20renmen%20fè%20yon%20don%20pou%20Foyer%20Espoir%20et%20Action%20via%20MonCash." 
+       target="_blank" 
+       class="btn-don moncash-btn">
+      💚 Faire un don via MonCash
+    </a>
+  </div>
+</section>
+
+
+<div class="pub-card">
+        <img src="image5.jpg.jpg.jpg" alt="Action communautaire">
+        <section class="publication">
+        <h4>Agir Ensemble</h4>
+        <p>Retour sur la journée de reboisement à Camp-Perrin.  
+        D’autres initiatives suivront bientôt !</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
+      <p>No enregistrement au MAST: STW-39322.</p>
+      <div class="socials">
+        <a href="mailto:Fea05985@gmail.com" title="Envoyer un mail"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.instagram.com/foyerespoir&action" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/fea404961392399" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" title="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT MENU RESPONSIF -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
