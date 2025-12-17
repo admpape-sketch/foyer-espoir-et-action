@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Staff - Foyer Espoir et Action</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -17,92 +14,35 @@
       font-family: 'Poppins', sans-serif;
       background: #f6f9f8;
       color: #222;
-      line-height: 1.6;
     }
-
-    /* ===== HEADER ===== */
     header {
       background: linear-gradient(90deg, #00784e, #00a870);
       color: #fff;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      z-index: 10;
     }
-
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
-
-    nav h1 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.2rem;
     }
-
     nav a {
       color: #fff;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
     }
+    nav a.active { color: #ffda79; }
 
-    nav a:hover, nav a.active {
-      color: #ffda79;
-    }
-
-    /* ===== HAMBURGER ===== */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        background: #00784e;
-        margin-top: 1rem;
-        border-radius: 8px;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      nav ul li {
-        text-align: center;
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-      }
-    }
-
-    /* ===== STAFF SECTIONS ===== */
     section {
       padding: 2rem 10%;
       background: #fff;
-      margin: 1rem auto;
+      margin: 1.5rem auto;
       max-width: 900px;
       border-radius: 12px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
@@ -110,8 +50,8 @@
     }
 
     section img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 1rem;
@@ -121,122 +61,112 @@
     section h3 {
       color: #00784e;
       font-size: 1.3rem;
+    }
+
+    section .role {
+      font-weight: 600;
       margin-bottom: 0.5rem;
     }
 
     section .quote {
       font-size: 0.95rem;
-      text-align: justify;
       color: #333;
     }
 
-    /* ===== FOOTER ===== */
     footer {
       background: #004d32;
       color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem;
       margin-top: 3rem;
-    }
-
-    footer p {
-      margin: 0;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
-      <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="mission.html">Notre Mission</a></li>
-        <li><a href="programmes.html">Nos Programmes</a></li>
-        <li><a href="aider.html">Comment Aider</a></li>
-        <li><a href="staff.html" class="active">Staff</a></li>
-         <li><a href="publication.html">publication</a></li> 
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- COORDONNATEUR -->
-  <section>
-    <img src="image8.jpg.jpg.jpg" alt="Joseph Jr. HENRY, Coordonnateur Général">
-    <h3>Joseph Jr. HENRY</h3>
-    <p><strong>Coordonnateur Général</strong></p>
-    <div class="quote">
-      <p>Master Degree of Business Administration (University Of Appro International), Bachelor in Management (El Shaddai International Christian University). Études en comptabilité (École de commerce Julien Craan), formation en évaluation stratégique et financière (OCPAH), études en réseau informatique et administration réseau (AUF).</p>
-    </div>
-  </section>
+<header>
+  <nav>
+    <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="mission.html">Notre Mission</a></li>
+      <li><a href="programmes.html">Nos Programmes</a></li>
+      <li><a href="aider.html">Comment Aider</a></li>
+      <li><a href="staff.html" class="active">Staff</a></li>
+      <li><a href="publication.html">Publication</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- COORDONNATRICE PROGRAMME -->
-  <section>
-    <img src="image9.jpg.jpg.jpg.jpg" alt="Saphir Mascary, Responsable de Programme">
-    <h3>Saphir Mascary</h3>
-    <p><strong>Responsable de Programme</strong></p>
-    <div class="quote">
-      <p>Études en Gestion des Affaires et en Comptabilité à l’Université Adventiste d’Haïti (UNAH). Étudiante en Maîtrise en Finance à l’UNAH.</p>
-    </div>
-  </section>
+<!-- COORDONNATEUR -->
+<section>
+  <img src="image8.jpg.jpg.jpg" alt="Joseph Jr. HENRY">
+  <h3>Joseph Jr. HENRY</h3>
+  <p class="role">Coordonnateur Général</p>
+  <div class="quote">
+    <p>Assure la direction stratégique de l’organisation, coordonne les actions globales et veille à la bonne mise en œuvre de la mission et des valeurs du Foyer Espoir et Action.</p>
+  </div>
+</section>
 
-  <!-- RELATIONS INTERNATIONALES -->
-  <section>
-    <img src="image10.jpg.jpg.jpg" alt="Rodna Timothée Henry, Responsable Relations Internationales">
-    <h3>Rodna Timothée Henry</h3>
-    <p><strong>Responsable Relations Internationales</strong></p>
-    <div class="quote">
-      <p>Administrative à University of Appro International, études en technique bancaire (BIWI), diplomatie et relations internationales (CEDI), et en Gestion des Affaires (UNAH).</p>
-    </div>
-  </section>
+<!-- PROGRAMMES -->
+<section>
+  <img src="image9.jpg.jpg.jpg.jpg" alt="Saphir Mascary">
+  <h3>Saphir Mascary</h3>
+  <p class="role">Responsable de Programme</p>
+  <div class="quote">
+    <p>Planifie, organise et supervise les programmes sociaux et communautaires afin de garantir leur impact et leur efficacité auprès des bénéficiaires.</p>
+  </div>
+</section>
 
-  <!-- COMMUNICATION -->
-  <section>
-    <img src="image11.jpg" alt="Sterline Jolicoeur, Responsable Communication">
-    <h3>Sterline Jolicoeur</h3>
-    <p><strong>Responsable Communication A.I</strong></p>
-    <div class="quote">
-      <p>Études en Comptabilité (UNAP) et en Communication (BEAUCOM).</p>
-    </div>
-  </section>
+<!-- RELATIONS INTERNATIONALES -->
+<section>
+  <img src="image10.jpg.jpg.jpg" alt="Rodna Timothée Henry">
+  <h3>Rodna Timothée Henry</h3>
+  <p class="role">Responsable Relations Internationales</p>
+  <div class="quote">
+    <p>Développe et entretient les partenariats internationaux, favorise la coopération externe et représente l’organisation auprès des institutions partenaires.</p>
+  </div>
+</section>
 
-  <!-- DÉPARTEMENT SANTÉ -->
-  <section>
-    <img src="image12.jpg" alt="Dr. Jean Marc Duprat, Responsable Département Santé">
-    <h3>Dr. Jean Marc Duprat</h3>
-    <p><strong>Responsable Département Santé</strong></p>
-    <div class="quote">
-      <p>Médecin diplômé de l’Université d’État d’Haïti (UEH), études en Théologie à l’Université Adventiste d’Haïti (UNAH).</p>
-    </div>
-  </section>
+<!-- COMMUNICATION -->
+<section>
+  <img src="image11.jpg.jpg.jpg" alt="Sterline Jolicoeur">
+  <h3>Sterline Jolicoeur</h3>
+  <p class="role">Responsable Communication A.I</p>
+  <div class="quote">
+    <p>Gère la communication institutionnelle, la visibilité numérique et l’utilisation des outils innovants pour renforcer l’image et la portée de l’organisation.</p>
+  </div>
+</section>
 
-  <!-- AUTRES MEMBRES -->
-  <section>
-    <img src="image13.jpg" alt="Membres du Staff">
-    <h3>Autres Membres</h3>
-    <div class="quote">
-      <p><strong>Sadrack Guy Meme</strong> – Conseiller en Communication (Études en Anthropologie à l’UEH)</p>
-      <p><strong>Jemps Jean Dozil</strong> – Conseiller en Communication & Responsable Logistique (Étudiant en Sciences Économiques à l’UEH)</p>
-      <p><strong>Barthelmy Renet</strong> – Responsable Développement (Maîtrise en Développement Durable à UNAI, Licence en Sciences Économiques à l’UEH)</p>
-      <p><strong>Anne Louis</strong> – Officier Junior en Comptabilité (École de Commerce Julien Craan)</p>
-      <p><strong>Kennedy Junior Mondesir</strong> – Officier Senior en Comptabilité (Études en Génie Civil à UNASMO, Comptabilité à Julien Craan)</p>
-      <p><strong>Michelene Nozier</strong> – Officier en Ressources Humaines (Études en Assistance Administrative à EDUCA+)</p>
-    </div>
-  </section>
+<!-- SANTÉ -->
+<section>
+  <img src="image12.jpg" alt="Dr Jean Marc Duprat">
+  <h3>Dr. Jean Marc Duprat</h3>
+  <p class="role">Responsable Département Santé</p>
+  <div class="quote">
+    <p>Supervise les activités sanitaires, coordonne les actions médicales et contribue à l’amélioration du bien-être et de la santé communautaire.</p>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
-  </footer>
+<!-- AUTRES MEMBRES -->
+<section>
+  <img src="image13.jpg" alt="Staff">
+  <h3>Autres Membres du Staff</h3>
+  <div class="quote">
+    <p><strong>Sadrack Guy Meme</strong> – Conseiller en Communication</p>
+    <p><strong>Jemps Jean Dozil</strong> – Responsable Logistique & Communication</p>
+    <p><strong>Barthelmy Renet</strong> – Responsable Développement</p>
+    <p><strong>Anne Louis</strong> – Officier Junior en Comptabilité</p>
+    <p><strong>Kennedy Junior Mondesir</strong> – Officier Senior en Comptabilité</p>
+    <p><strong>Michelene Nozier</strong> – Officier en Ressources Humaines</p>
+  </div>
+</section>
 
-  <script>
-    // Menu hamburger responsive
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('nav ul');
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+<footer>
+  <p>&copy; 2025 Foyer Espoir et Action — Tous droits réservés.</p>
+</footer>
+
 </body>
 </html>
