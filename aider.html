@@ -1,246 +1,251 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Staff - Foyer Espoir et Action</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment Aider - Foyer Espoir et Action</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #f6f9f8;
-      color: #222;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
+      background-color: #f6f9f8; /* Koulè background paj Staff la */
+      color: #222;
     }
 
     header {
-      background: linear-gradient(90deg, #00784e, #00a870);
+      background: linear-gradient(90deg, #00784e, #00a870); /* Gradient vèt Staff la */
       color: #fff;
-      padding: 1rem 5%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    nav {
+      padding: 1rem 10%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    nav h1 {
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    /* BOUTON HAMBURGER (Kache sou PC) */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
+    header h1 {
+      font-size: 1.5rem;
     }
 
     nav ul {
       list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
-      gap: 1.2rem;
+      gap: 1rem;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
-      transition: 0.3s;
     }
 
-    nav a:hover, nav a.active {
+    nav a.active {
+      color: #ffda79; /* Jòn paj Staff la */
+      font-weight: 600;
+    }
+
+    nav a:hover {
       color: #ffda79;
     }
 
-    /* --- RESPONSIVITE TELEFON --- */
-    @media (max-width: 900px) {
-      .menu-toggle {
-        display: block; /* Montre bouton an sou mobil */
-      }
-
-      nav ul {
-        display: none; /* Kache menu a pa defo */
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #00784e;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      }
-
-      nav ul.active {
-        display: flex; /* Montre l lè nou klike */
-      }
-
-      nav ul li {
-        margin: 10px 0;
-      }
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, #00784e, #00a870); /* Matche ak header a */
+      color: white;
+      padding: 3rem 1rem;
     }
 
-    /* SEKSYON KONTNI */
-    section {
-      padding: 2rem 5%;
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      padding: 2rem 10%;
+      text-align: center;
       background: #fff;
       margin: 1.5rem auto;
-      max-width: 800px;
+      max-width: 900px;
       border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
 
-    section img {
+    .section h3 {
+      color: #00784e; /* Vèt fonse paj Staff la */
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: #00a870; /* Vèt klè bouton */
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+      margin: 5px;
+    }
+
+    .btn:hover {
+      background: #00784e; /* Chanje nan vèt fonse lè w pase sou li */
+      color: #ffda79;
+    }
+
+    /* Seksyon Coordonnateur nan paj la */
+    .coordonateur {
+      padding: 2rem 10%;
+      background: #fff;
+      margin: 1.5rem auto;
+      max-width: 900px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .coordonateur img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 1rem;
       border: 4px solid #00a870;
-    }
-
-    section h3 {
-      color: #00784e;
-      margin-bottom: 0.2rem;
-    }
-
-    .role {
-      font-weight: 600;
-      color: #444;
       margin-bottom: 1rem;
     }
 
     .quote {
-      font-size: 0.95rem;
-      color: #555;
       font-style: italic;
+      color: #333;
+    }
+
+    .quote-author {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #00784e;
     }
 
     footer {
-      background: #004d32;
-      color: #fff;
       text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+      background: #004d32; /* Vèt fonse nèt footer Staff la */
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+
+    .socials a {
+      color: white;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #ffda79;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #00784e;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+        padding: 1rem 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: white;
+      }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-
-<header>
-  <nav>
+  <header>
     <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
-    
-    <button class="menu-toggle" id="hamburger">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+    <div class="menu-toggle" id="hamburger">☰</div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mission.html">Notre Mission</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="aider.html" class="active">Comment Aider</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <ul id="nav-menu">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="mission.html">Notre Mission</a></li>
-      <li><a href="programmes.html">Nos Programmes</a></li>
-      <li><a href="aider.html">Comment Aider</a></li>
-      <li><a href="staff.html" class="active">Staff</a></li>
-      <li><a href="publication.html">Publication</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <section class="hero">
+    <h2>Chaque geste compte</h2>
+    <p>Que ce soit par un don, du bénévolat ou le partage de nos actions, vous pouvez contribuer à bâtir une Haïti plus solidaire et durable.</p>
+  </section>
 
-<section>
-  <img src="image8.jpg" alt="Joseph Jr. HENRY">
-  <h3>Joseph Jr. HENRY</h3>
-  <p class="role">Coordonnateur Général</p>
-  <div class="quote">
-    <p>"Assure la direction stratégique de l’organisation, coordonne les actions globales et veille à la bonne mise en œuvre de la mission."</p>
-  </div>
-</section>
+  <section class="section">
+    <h3>Faire un Don</h3>
+    <p>Vos dons financent nos programmes de santé, d’éducation et de développement communautaire.</p>
+    <a href="#" class="btn">Faire un Don</a>
+  </section>
 
-<section>
-  <img src="image9.jpg" alt="Saphir Mascary">
-  <h3>Saphir Mascary</h3>
-  <p class="role">Responsable de Programme</p>
-  <div class="quote">
-    <p>"Planifie, organise et supervise les programmes sociaux et communautaires afin de garantir leur impact."</p>
-  </div>
-</section>
+  <section class="section">
+    <h3>Devenir Volontaire</h3>
+    <p>Participez à nos projets éducatifs, environnementaux ou humanitaires sur le terrain.</p>
+    <a href="#" class="btn">Je M’engage</a>
+  </section>
 
-<section>
-  <img src="image10.jpg" alt="Rodna Timothée Henry">
-  <h3>Rodna Timothée Henry</h3>
-  <p class="role">Responsable Relations Internationales</p>
-  <div class="quote">
-    <p>"Développe et entretient les partenariats internationaux, favorise la coopération externe."</p>
-  </div>
-</section>
+  <section class="section">
+    <h3>Partager et Sensibiliser</h3>
+    <p>Faites connaître notre action autour de vous. Chaque partage compte !</p>
+    <a href="#" class="btn">Partager</a>
+  </section>
 
-<section>
-  <img src="image11.jpg" alt="Sterline Jolicoeur">
-  <h3>Sterline Jolicoeur</h3>
-  <p class="role">Responsable Communication A.I</p>
-  <div class="quote">
-    <p>"Gère la communication institutionnelle, la visibilité numérique et l’utilisation des outils innovants."</p>
-  </div>
-</section>
+  <section class="coordonateur">
+    <img src="image8.jpg" alt="Joseph Jr. HENRY" />
+    <div class="quote">
+      « Notre force, c’est la solidarité. Quand nous agissons ensemble, tout devient possible. »
+      <div class="quote-author">Joseph Jr. HENRY, Coordonnateur Général</div>
+    </div>
+  </section>
 
-<section>
-  <img src="image12.jpg" alt="Dr Jean Marc Duprat">
-  <h3>Dr. Jean Marc Duprat</h3>
-  <p class="role">Responsable Département Santé</p>
-  <div class="quote">
-    <p>"Supervise les activités sanitaires, coordonne les actions médicales et contribue à l’amélioration du bien-être."</p>
-  </div>
-</section>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
+      <p>No enregistrement au MAST: <strong>STW-39322</strong></p>
 
-<section>
-  <img src="image13.jpg" alt="Staff">
-  <h3>Autres Membres du Staff</h3>
-  <div class="quote" style="font-style: normal; text-align: left; display: inline-block;">
-    <p>• <strong>Sadrack Guy Meme</strong> – Conseiller en Communication</p>
-    <p>• <strong>Jemps Jean Dozil</strong> – Responsable Logistique</p>
-    <p>• <strong>Barthelmy Renet</strong> – Responsable Développement</p>
-    <p>• <strong>Anne Louis</strong> – Officier Junior en Comptabilité</p>
-    <p>• <strong>Kennedy Junior Mondesir</strong> – Officier Senior</p>
-    <p>• <strong>Michelene Nozier</strong> – Ressources Humaines</p>
-  </div>
-</section>
+      <div class="socials">
+        <a href="mailto:Fea05985@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.instagram.com/foyerespoir&action" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/fea404961392399" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 
-<footer>
-  <p>&copy; 2025 Foyer Espoir et Action — Tous droits réservés.</p>
-</footer>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Chanje ikon an (opsyonèl: soti nan bar pou ale nan X)
-    const icon = hamburger.querySelector('i');
-    if (navMenu.classList.contains('active')) {
-      icon.classList.replace('fa-bars', 'fa-xmark');
-    } else {
-      icon.classList.replace('fa-xmark', 'fa-bars');
-    }
-  });
-</script>
-
+  <script>
+    const toggle = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
