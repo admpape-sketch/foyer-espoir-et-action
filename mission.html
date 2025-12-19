@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Notre Mission - Foyer Espoir et Action</title>
 
   <!-- Google Fonts -->
@@ -14,11 +13,12 @@
 
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Poppins', sans-serif; line-height:1.6; color:#222; background:#f5f9f6; }
-    a { text-decoration:none; }
+    body { font-family:'Poppins', sans-serif; line-height:1.6; color:#222; background:#e6f2ed; }
+
+    a { text-decoration:none; color:inherit; }
 
     header {
-      background:#016241;
+      background:#016241; /* vert principal */
       color:#fff;
       padding:1rem 2rem;
       display:flex;
@@ -27,11 +27,12 @@
       position:relative;
     }
 
-    header h1 { font-size:1.3rem; }
+    header h1 { font-size:1.5rem; display:flex; align-items:center; gap:0.5rem; }
 
     .menu-icon { display:none; font-size:1.8rem; cursor:pointer; }
     nav ul { list-style:none; display:flex; gap:1.5rem; }
-    nav a { color:#fff; font-weight:500; }
+    nav a { color:#fff; font-weight:500; transition: color 0.3s; }
+    nav a:hover { color:#a5d6a7; }
 
     @media (max-width:768px){
       nav ul {
@@ -41,13 +42,49 @@
         position:absolute;
         top:60px;
         right:10px;
-        width:200px;
+        width:220px;
         border-radius:8px;
         padding:1rem;
       }
       nav ul.active { display:flex; }
       .menu-icon { display:block; }
     }
+
+    .mission-section {
+      max-width:800px;
+      margin:3rem auto;
+      padding:2rem;
+      background:#f5fff8; /* fond légèrement vert */
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .mission-section h2 {
+      color:#016241; /* vert titres */
+      margin-bottom:0.8rem;
+      margin-top:1.5rem;
+    }
+
+    .mission-section p {
+      margin-bottom:1rem;
+    }
+
+    footer {
+      background:#016241;
+      color:#fff;
+      padding:2rem;
+      text-align:center;
+      margin-top:2rem;
+    }
+
+    footer .socials a {
+      margin:0 0.5rem;
+      color:#fff;
+      font-size:1.2rem;
+      transition: color 0.3s;
+    }
+
+    footer .socials a:hover { color:#a5d6a7; }
   </style>
 </head>
 
@@ -74,57 +111,42 @@
   <p>
     Le <strong>Foyer Espoir et Action</strong> œuvre pour renforcer les capacités des communautés haïtiennes
     à travers des programmes intégrés de santé, d’éducation, d’entrepreneuriat et de protection de
-    l’environnement.
+    l’environnement. Nous croyons en une approche centrée sur la dignité, la solidarité et l’autonomie durable.
   </p>
+
+  <h2>Notre Vision</h2>
+  <p>
+    Nous envisageons un monde où la faim n’existe plus, où chaque entrepreneur, peu importe sa taille, 
+    a accès aux ressources nécessaires pour progresser. Nous aspirons à une société où la santé et l’éducation
+    sont des droits accessibles à tous et où la planète est protégée pour les générations futures.
+  </p>
+
+  <h2>Nos Valeurs</h2>
+  <p>Inclusion, Équité, Solidarité, Durabilité.</p>
 </section>
-  <!-- CONTENU -->
-  <section class="mission-section">
-    <h2>Notre Mission</h2>
-    <p>
-      Le <strong>Foyer Espoir et Action</strong> œuvre pour renforcer les capacités des communautés haïtiennes
-      à travers des programmes intégrés de santé, d’éducation, d’entrepreneuriat et de protection de
-      l’environnement. Nous croyons en une approche centrée sur la dignité, la solidarité et l’autonomie durable.
-    </p>
 
-    <h2>Notre vision</h2>
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
+    <p>No enrégistrement au MAST: <strong>STW-39322</strong></p>
 
-Nous envisageons un monde où la faim n’éxiste plus, où chaque entrepreneurs peu importe sa taille à acces aux ressources nécessaires pour progresser. Nous aspirons à une societé où la santé et l’éducation sont des droits accessibles à tous et où la planête est protegé pour les générations futures. 
- 
-<h2>Notre valeur</h2>
-Inclusion, Equité, Solidarité, Durabilité.
+    <div class="socials">
+      <a href="mailto:Fea05985@gmail.com" title="Envoyer un email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a href="https://www.instagram.com/foyerespoir&action" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://x.com/fea404961392399" target="_blank" title="X (Twitter)">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+      <a href="#" title="Chaîne YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
 
-
-
-
-
-
-
-  
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
-            <p>No enrégistrement au MAST: <strong>STW-39322</strong></p>
-
-            <div class="socials">
-                <a href="mailto:Fea05985@gmail.com" title="Envoyer un email">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-
-                <a href="https://www.instagram.com/foyerespoir&action" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <a href="https://x.com/fea404961392399" target="_blank" title="X (Twitter)">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-
-                <a href="#" title="Chaîne YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
- 
 <script>
   const menuBtn = document.getElementById("menuBtn");
   const menu = document.getElementById("menu");
@@ -136,4 +158,3 @@ Inclusion, Equité, Solidarité, Durabilité.
 
 </body>
 </html>
-
