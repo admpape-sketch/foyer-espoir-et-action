@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nos Programmes - Foyer Espoir et Action</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -22,9 +20,10 @@
     header {
       background: linear-gradient(90deg, #00784e, #00a870);
       color: #fff;
-      padding: 1rem 2rem;
+      padding: 1rem 5%;
       position: sticky;
       top: 0;
+      z-index: 1000;
       box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
 
@@ -32,23 +31,33 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     nav h1 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: 700;
       display: flex;
       align-items: center;
       gap: .5rem;
+      margin: 0;
+    }
+
+    /* Bouton Hamburger */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.2rem;
-      flex-wrap: wrap;
       margin: 0;
+      padding: 0;
     }
 
     nav a {
@@ -62,9 +71,12 @@
       color: #ffda79;
     }
 
+    /* Kontni Programmes */
     .programmes {
       padding: 3rem 8%;
       background: #fff;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .programmes h2 {
@@ -91,7 +103,7 @@
 
     .programme h3 {
       color: #00a870;
-      margin-bottom: 0.8rem;
+      margin-top: 0;
     }
 
     .programme img {
@@ -99,7 +111,8 @@
       border-radius: 10px;
       margin: 1rem 0;
       object-fit: cover;
-      max-height: 350px;
+      max-height: 400px;
+      display: block;
     }
 
     footer {
@@ -107,20 +120,41 @@
       color: #fff;
       text-align: center;
       padding: 2rem 1rem;
-      margin-top: 2rem;
     }
 
-    footer p {
-      margin: 0;
-    }
-
+    /* --- RESPONSIVE DESIGN --- */
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
+      .menu-toggle {
+        display: block; /* Montre bouton an sou mobil */
       }
-      .programme {
-        padding: 1.5rem;
+
+      nav ul {
+        display: none; /* Kache menu a pa defo */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #00784e;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex; /* Montre menu a lè nou klike sou bouton an */
+      }
+
+      nav ul li {
+        padding: 10px 0;
+      }
+
+      .programmes {
+        padding: 2rem 5%;
+      }
+
+      .programmes h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -130,10 +164,15 @@
   <header>
     <nav>
       <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
-      <ul>
+      
+      <button class="menu-toggle" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul id="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="mission.html">Notre Mission</a></li>
-         <li><a href="staff.html">staff</a></li>
+        <li><a href="staff.html">Staff</a></li>
         <li><a href="programmes.html" class="active">Nos Programmes</a></li>
         <li><a href="aider.html">Comment Aider</a></li>
         <li><a href="publications.html">Publications</a></li>
@@ -145,90 +184,58 @@
   <section class="programmes">
     <h2>Des Solutions Concrètes pour un Avenir Durable</h2>
 
-    <!-- PROGRAMME 1 -->
     <div class="programme">
       <h3>1. Implantation d’un Orphelinat</h3>
       <img src="images/orphelinat.jpg" alt="Orphelinat">
       <p>
-        Imaginez un lieu où chaque enfant, malgré les défis de la vie, trouve un foyer chaleureux et un avenir prometteur.
+        Imaginez un lieu où chaque enfant, malgré les défis de la vie, trouve un foyer chaleureux et un avenir prometteur. 
         Ce projet vise à offrir un abri, une éducation, des soins de santé et une protection aux enfants vulnérables d’Haïti.
       </p>
-      <p><strong>Durée :</strong> 2 ans &nbsp; | </p>
+      <p><strong>Durée :</strong> 2 ans</p>
     </div>
 
-    <!-- PROGRAMME 2 -->
     <div class="programme">
       <h3>2. Montage d’une Structure de Microcrédit</h3>
       <img src="images/microcredit.jpg" alt="Microcrédit pour entrepreneurs">
       <p>
-      🔗 <strong>Plateforme digitale :</strong>
-      <a href="https://fincreditpro.web.app/" target="_blank" style="color:#00784e;font-weight:600;">
-        https://fincreditpro.web.app/
-      </a>
-    </p>
+        🔗 <strong>Plateforme digitale :</strong>
+        <a href="https://fincreditpro.web.app/" target="_blank" style="color:#00784e;font-weight:600;">
+          https://fincreditpro.web.app/
+        </a>
+      </p>
       <p>
-        Ce projet soutient 15 petits entrepreneurs en Haïti, à travers la formation, l’octroi de prêts et la mise en réseau.
+        Ce projet soutient 15 petits entrepreneurs en Haïti, à travers la formation, l’octroi de prêts et la mise en réseau. 
         L’objectif est de renforcer l’autonomie économique et de créer un effet boule de neige positif au sein des communautés locales.
       </p>
-      <p><strong>Durée :</strong> 2 ans &nbsp;</p>
+      <p><strong>Durée :</strong> 2 ans</p>
     </div>
 
-    <!-- PROGRAMME 3 -->
     <div class="programme">
-      <h3>3. Campagne de Formation sur la Santé Communautaire</h3>
-      <img src="images/sante.jpg" alt="Formation santé communautaire">
-      <p>
-        Cette campagne vise à informer, former et mobiliser les habitants sur les bonnes pratiques de santé, la prévention des maladies et la promotion du bien-être.
-      </p>
-      <p><strong>Durée :</strong> 2 mois &nbsp; </p>
+        <h3>3. Campagne de Formation sur la Santé Communautaire</h3>
+        <img src="images/sante.jpg" alt="Formation santé communautaire">
+        <p>Cette campagne vise à informer, former et mobiliser les habitants sur les bonnes pratiques de santé.</p>
+        <p><strong>Durée :</strong> 2 mois</p>
     </div>
-
-    <!-- PROGRAMME 4 -->
-    <div class="programme">
-      <h3>4. Initiative de Solidarité Humanitaire à Saint-Marc</h3>
-      <img src="images/humanitaire.jpg" alt="Solidarité à Saint-Marc">
-      <p>
-        Ce projet soutient les familles affectées par l’insécurité à Saint-Marc à travers un accompagnement psychosocial, 
-        la distribution de kits d’urgence et le renforcement de la résilience communautaire.
-      </p>
-      <p><strong>Durée :</strong> 2 ans &nbsp;</p>
-    </div>
-
-    <!-- PROGRAMME 5 -->
-    <div class="programme">
-      <h3>5. Honneur et Mérite aux Personnes Remarquables</h3>
-      <img src="images/honneur.jpg" alt="Cérémonie d'honneur">
-      <p>
-        Ce programme célèbre les contributions exceptionnelles de citoyens haïtiens courageux et inspirants. 
-        Il vise à encourager la reconnaissance, la gratitude et l’inspiration dans toute la société haïtienne.
-      </p>
-    </div>
-
-    <!-- PROGRAMME 6 -->
-    <div class="programme">
-      <h3>6. Aider les Jeunes à Rentrer à l’Université</h3>
-      <img src="images/etudiants.jpg" alt="Jeunes à l'université">
-      <p>
-        Cette initiative soutient les jeunes défavorisés pour leur permettre d’accéder à l’enseignement supérieur. 
-        En investissant dans leur éducation, nous préparons les leaders et innovateurs de demain.
-      </p>
-    </div>
-
-    <!-- PROGRAMME 7 -->
-    <div class="programme">
-      <h3>7. Soutenir des Projets Innovants (Appel à Projets)</h3>
-      <img src="images/projets.jpg" alt="Appel à projets communautaires">
-      <p>
-        Ce programme soutient des projets communautaires innovants afin de renforcer la créativité, la collaboration et l’impact local. 
-        Chaque idée soutenue devient une source d’espoir et de changement durable.
-      </p>
-    </div>
-  </section>
+    </section>
 
   <footer>
     <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Fèmen menu a si moun nan klike sou yon lyen (opsyonèl)
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
 </body>
 </html>
-
-
