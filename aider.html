@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comment Aider - Foyer Espoir et Action</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -17,17 +21,19 @@
     header {
       background: linear-gradient(90deg, #00784e, #00a870); /* Gradient vèt Staff la */
       color: #fff;
-      padding: 1rem 10%;
+      padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
 
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      margin: 0;
     }
 
     nav ul {
@@ -35,18 +41,18 @@
       margin: 0;
       padding: 0;
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
+      transition: 0.3s;
     }
 
     nav a.active {
       color: #ffda79; /* Jòn paj Staff la */
-      font-weight: 600;
     }
 
     nav a:hover {
@@ -55,7 +61,7 @@
 
     .hero {
       text-align: center;
-      background: linear-gradient(to right, #00784e, #00a870); /* Matche ak header a */
+      background: linear-gradient(to right, #00784e, #00a870); /* Matche ak rès la */
       color: white;
       padding: 3rem 1rem;
     }
@@ -76,17 +82,17 @@
     }
 
     .section h3 {
-      color: #00784e; /* Vèt fonse paj Staff la */
+      color: #00784e; /* Vèt fonse */
       margin-bottom: 0.5rem;
     }
 
     .section p {
       color: #333;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .btn {
-      background: #00a870; /* Vèt klè bouton */
+      background: #00a870; /* Vèt klè */
       color: white;
       padding: 0.8rem 1.5rem;
       border-radius: 30px;
@@ -94,17 +100,17 @@
       font-weight: 600;
       transition: 0.3s;
       display: inline-block;
-      margin: 5px;
+      margin: 10px 5px;
     }
 
     .btn:hover {
-      background: #00784e; /* Chanje nan vèt fonse lè w pase sou li */
+      background: #00784e;
       color: #ffda79;
     }
 
-    /* Seksyon Coordonnateur nan paj la */
+    /* Seksyon Coordonnateur */
     .coordonateur {
-      padding: 2rem 10%;
+      padding: 2rem 5%;
       background: #fff;
       margin: 1.5rem auto;
       max-width: 900px;
@@ -125,6 +131,8 @@
     .quote {
       font-style: italic;
       color: #333;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .quote-author {
@@ -135,15 +143,19 @@
 
     footer {
       text-align: center;
-      background: #004d32; /* Vèt fonse nèt footer Staff la */
+      background: #004d32; /* Vèt fonse footer Staff la */
       color: white;
       padding: 2rem 1rem;
       margin-top: 2rem;
     }
 
+    .socials {
+      margin-top: 1rem;
+    }
+
     .socials a {
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin: 0 10px;
       transition: 0.3s;
     }
@@ -152,36 +164,42 @@
       color: #ffda79;
     }
 
-    @media (max-width: 768px) {
+    /* --- RESPONSIVE / HAMBURGER --- */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+
       nav ul {
+        display: none;
         flex-direction: column;
         background: #00784e;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
         width: 100%;
-        display: none;
         padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
       }
 
       nav ul.show {
         display: flex;
       }
-
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: white;
-      }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
-    <div class="menu-toggle" id="hamburger">☰</div>
+    <div class="menu-toggle" id="hamburger"><i class="fa-solid fa-bars"></i></div>
     <nav>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Accueil</a></li>
@@ -197,7 +215,7 @@
 
   <section class="hero">
     <h2>Chaque geste compte</h2>
-    <p>Que ce soit par un don, du bénévolat ou le partage de nos actions, vous pouvez contribuer à bâtir une Haïti plus solidaire et durable.</p>
+    <p>Que ce soit par un don, du bénévolat ou le partage de nos actions, vous pouvez contribuer à bâtir une Haïti plus solidaire et durable. Rejoignez notre mouvement d’espoir !</p>
   </section>
 
   <section class="section">
@@ -219,13 +237,13 @@
   </section>
 
   <section class="coordonateur">
-    <img src="image8.jpg" alt="Joseph Jr. HENRY" />
+    <img src="image8.jpg" alt="Coordonnateur Général" />
     <div class="quote">
       « Notre force, c’est la solidarité. Quand nous agissons ensemble, tout devient possible. »
       <div class="quote-author">Joseph Jr. HENRY, Coordonnateur Général</div>
     </div>
   </section>
-
+    
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
@@ -239,7 +257,7 @@
       </div>
     </div>
   </footer>
-
+    
   <script>
     const toggle = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
