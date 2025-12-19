@@ -10,48 +10,104 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Poppins', sans-serif;
       background: #f6f9f8;
       color: #222;
+      line-height: 1.6;
     }
+
     header {
       background: linear-gradient(90deg, #00784e, #00a870);
       color: #fff;
-      padding: 1rem 2rem;
+      padding: 1rem 5%;
       position: sticky;
       top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
+
+    nav h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* BOUTON HAMBURGER (Kache sou PC) */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.2rem;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
     }
-    nav a.active { color: #ffda79; }
 
+    nav a:hover, nav a.active {
+      color: #ffda79;
+    }
+
+    /* --- RESPONSIVITE TELEFON --- */
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block; /* Montre bouton an sou mobil */
+      }
+
+      nav ul {
+        display: none; /* Kache menu a pa defo */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #00784e;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      nav ul.active {
+        display: flex; /* Montre l lè nou klike */
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+
+    /* SEKSYON KONTNI */
     section {
-      padding: 2rem 10%;
+      padding: 2rem 5%;
       background: #fff;
       margin: 1.5rem auto;
-      max-width: 900px;
+      max-width: 800px;
       border-radius: 12px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
       text-align: center;
     }
 
     section img {
-      width: 180px;
-      height: 180px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 1rem;
@@ -60,17 +116,19 @@
 
     section h3 {
       color: #00784e;
-      font-size: 1.3rem;
+      margin-bottom: 0.2rem;
     }
 
-    section .role {
+    .role {
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      color: #444;
+      margin-bottom: 1rem;
     }
 
-    section .quote {
+    .quote {
       font-size: 0.95rem;
-      color: #333;
+      color: #555;
+      font-style: italic;
     }
 
     footer {
@@ -88,7 +146,12 @@
 <header>
   <nav>
     <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
-    <ul>
+    
+    <button class="menu-toggle" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <ul id="nav-menu">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="mission.html">Notre Mission</a></li>
       <li><a href="programmes.html">Nos Programmes</a></li>
@@ -100,73 +163,84 @@
   </nav>
 </header>
 
-<!-- COORDONNATEUR -->
 <section>
-  <img src="image8.jpg.jpg.jpg" alt="Joseph Jr. HENRY">
+  <img src="image8.jpg" alt="Joseph Jr. HENRY">
   <h3>Joseph Jr. HENRY</h3>
   <p class="role">Coordonnateur Général</p>
   <div class="quote">
-    <p>Assure la direction stratégique de l’organisation, coordonne les actions globales et veille à la bonne mise en œuvre de la mission et des valeurs du Foyer Espoir et Action.</p>
+    <p>"Assure la direction stratégique de l’organisation, coordonne les actions globales et veille à la bonne mise en œuvre de la mission."</p>
   </div>
 </section>
 
-<!-- PROGRAMMES -->
 <section>
-  <img src="image9.jpg.jpg.jpg.jpg" alt="Saphir Mascary">
+  <img src="image9.jpg" alt="Saphir Mascary">
   <h3>Saphir Mascary</h3>
   <p class="role">Responsable de Programme</p>
   <div class="quote">
-    <p>Planifie, organise et supervise les programmes sociaux et communautaires afin de garantir leur impact et leur efficacité auprès des bénéficiaires.</p>
+    <p>"Planifie, organise et supervise les programmes sociaux et communautaires afin de garantir leur impact."</p>
   </div>
 </section>
 
-<!-- RELATIONS INTERNATIONALES -->
 <section>
-  <img src="image10.jpg.jpg.jpg" alt="Rodna Timothée Henry">
+  <img src="image10.jpg" alt="Rodna Timothée Henry">
   <h3>Rodna Timothée Henry</h3>
   <p class="role">Responsable Relations Internationales</p>
   <div class="quote">
-    <p>Développe et entretient les partenariats internationaux, favorise la coopération externe et représente l’organisation auprès des institutions partenaires.</p>
+    <p>"Développe et entretient les partenariats internationaux, favorise la coopération externe."</p>
   </div>
 </section>
 
-<!-- COMMUNICATION -->
 <section>
-  <img src="image11.jpg.jpg.jpg" alt="Sterline Jolicoeur">
+  <img src="image11.jpg" alt="Sterline Jolicoeur">
   <h3>Sterline Jolicoeur</h3>
   <p class="role">Responsable Communication A.I</p>
   <div class="quote">
-    <p>Gère la communication institutionnelle, la visibilité numérique et l’utilisation des outils innovants pour renforcer l’image et la portée de l’organisation.</p>
+    <p>"Gère la communication institutionnelle, la visibilité numérique et l’utilisation des outils innovants."</p>
   </div>
 </section>
 
-<!-- SANTÉ -->
 <section>
   <img src="image12.jpg" alt="Dr Jean Marc Duprat">
   <h3>Dr. Jean Marc Duprat</h3>
   <p class="role">Responsable Département Santé</p>
   <div class="quote">
-    <p>Supervise les activités sanitaires, coordonne les actions médicales et contribue à l’amélioration du bien-être et de la santé communautaire.</p>
+    <p>"Supervise les activités sanitaires, coordonne les actions médicales et contribue à l’amélioration du bien-être."</p>
   </div>
 </section>
 
-<!-- AUTRES MEMBRES -->
 <section>
   <img src="image13.jpg" alt="Staff">
   <h3>Autres Membres du Staff</h3>
-  <div class="quote">
-    <p><strong>Sadrack Guy Meme</strong> – Conseiller en Communication</p>
-    <p><strong>Jemps Jean Dozil</strong> – Responsable Logistique & Communication</p>
-    <p><strong>Barthelmy Renet</strong> – Responsable Développement</p>
-    <p><strong>Anne Louis</strong> – Officier Junior en Comptabilité</p>
-    <p><strong>Kennedy Junior Mondesir</strong> – Officier Senior en Comptabilité</p>
-    <p><strong>Michelene Nozier</strong> – Officier en Ressources Humaines</p>
+  <div class="quote" style="font-style: normal; text-align: left; display: inline-block;">
+    <p>• <strong>Sadrack Guy Meme</strong> – Conseiller en Communication</p>
+    <p>• <strong>Jemps Jean Dozil</strong> – Responsable Logistique</p>
+    <p>• <strong>Barthelmy Renet</strong> – Responsable Développement</p>
+    <p>• <strong>Anne Louis</strong> – Officier Junior en Comptabilité</p>
+    <p>• <strong>Kennedy Junior Mondesir</strong> – Officier Senior</p>
+    <p>• <strong>Michelene Nozier</strong> – Ressources Humaines</p>
   </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Foyer Espoir et Action — Tous droits réservés.</p>
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    
+    // Chanje ikon an (opsyonèl: soti nan bar pou ale nan X)
+    const icon = hamburger.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+      icon.classList.replace('fa-bars', 'fa-xmark');
+    } else {
+      icon.classList.replace('fa-xmark', 'fa-bars');
+    }
+  });
+</script>
 
 </body>
 </html>
