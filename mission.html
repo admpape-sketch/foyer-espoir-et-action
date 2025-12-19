@@ -5,119 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notre Mission - Foyer Espoir et Action</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Poppins', sans-serif; line-height:1.6; color:#222; background:#f6f9f8; }
+    body { font-family:'Poppins', sans-serif; line-height:1.6; color:#222; background:#f5f9f6; }
     a { text-decoration:none; }
 
     header {
-      background: linear-gradient(90deg, #00784e, #00a870);
+      background:#016241;
       color:#fff;
-      padding:1rem 5%;
+      padding:1rem 2rem;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position:relative;
     }
 
-    .menu-icon { display:none; font-size:1.8rem; cursor:pointer; color: white; }
+    header h1 { font-size:1.3rem; }
+
+    .menu-icon { display:none; font-size:1.8rem; cursor:pointer; }
     nav ul { list-style:none; display:flex; gap:1.5rem; }
-    nav a { color:#fff; font-weight:500; transition: 0.3s; }
-    nav a.active, nav a:hover { color: #ffda79; }
+    nav a { color:#fff; font-weight:500; }
 
-    /* STYLE POU TELEFÒN */
-    @media (max-width:950px){
-      .menu-icon { display:block; }
-      nav ul { 
-        display:none; /* Kache menu a pa defo */
-        flex-direction:column; 
-        background:#00784e; 
-        position:absolute; 
-        top:100%; left:0; width:100%; 
-        padding: 2rem 0; text-align: center;
+    @media (max-width:768px){
+      nav ul {
+        display:none;
+        flex-direction:column;
+        background:#024d32;
+        position:absolute;
+        top:60px;
+        right:10px;
+        width:200px;
+        border-radius:8px;
+        padding:1rem;
       }
-      nav ul.active { display:flex; } /* Lè w klike bouton an, li parèt */
-      nav ul li { margin: 15px 0; }
+      nav ul.active { display:flex; }
+      .menu-icon { display:block; }
     }
 
-    .content-container { padding: 3rem 5%; max-width: 900px; margin: 0 auto; }
-    .mission-card { background: #fff; padding: 2.5rem; border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
-    .mission-card h2 { color:#00784e; margin-bottom: 1rem; border-bottom: 2px solid #ffda79; display: inline-block; }
+    .mission-section {
+      padding:3rem 10%;
+      background:linear-gradient(135deg, #e6f4ea, #ffffff);
+      text-align:center;
+      border-radius:16px;
+      margin:2rem auto;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
 
-    .values-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 1.5rem; }
-    .value-tag { background: #e6f4ea; color: #00784e; padding: 10px 25px; border-radius: 30px; font-weight: 600; border: 1px solid #00a870; }
+    .mission-section h2 {
+      color:#016241;
+      font-size:2rem;
+      margin-bottom:1rem;
+    }
 
-    footer { background:#004d32; color:#fff; text-align:center; padding:3rem 1rem; margin-top:3rem; }
-    .socials a { color: white; margin: 0 12px; font-size: 1.5rem; }
+    .mission-section p {
+      max-width:800px;
+      margin:0 auto 2rem;
+      font-size:1.1rem;
+      color:#333;
+    }
+
+    footer {
+      background:#016241;
+      color:#fff;
+      text-align:center;
+      padding:1rem;
+      margin-top:2rem;
+    }
+
+    .socials a {
+      color:#fff;
+      margin:0 8px;
+      font-size:1.2rem;
+    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
-    <i class="fa-solid fa-bars menu-icon" id="menuBtn"></i>
-    <nav>
-      <ul id="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="mission.html" class="active">Mission</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="programmes.html">Programmes</a></li>
-        <li><a href="aider.html">Comment aider</a></li>
-        <li><a href="publications.html">Publication</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
+  <i class="fa-solid fa-bars menu-icon" id="menuBtn"></i>
+  <nav>
+    <ul id="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="staff.html">Staff</a></li>
+      <li><a href="programmes.html">Programmes</a></li>
+      <li><a href="aider.html">Comment aider</a></li>
+      <li><a href="publication.html">Publication</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <div class="content-container">
-    <section class="mission-card">
-      <h2>Notre Mission</h2>
-      <p>Le <strong>Foyer Espoir et Action</strong> œuvre pour renforcer les capacités des communautés haïtiennes...</p>
-    </section>
+<section class="mission-section">
+  <h2>Notre Mission</h2>
+  <p>
+    Le <strong>Foyer Espoir et Action</strong> œuvre pour renforcer les capacités des communautés haïtiennes
+    à travers des programmes intégrés de santé, d’éducation, d’entrepreneuriat et de protection de
+    l’environnement. Nous croyons en une approche centrée sur la dignité, la solidarité et l’autonomie durable.
+  </p>
 
-    <section class="mission-card">
-      <h2>Notre Vision</h2>
-      <p>Nous envisageons un monde où la faim n’existe plus...</p>
-    </section>
+  <h2>Notre vision</h2>
+  <p>
+    Nous envisageons un monde où la faim n’existe plus, où chaque entrepreneur,
+    peu importe sa taille, a accès aux ressources nécessaires pour progresser.
+    Nous aspirons à une société où la santé et l’éducation sont des droits accessibles
+    à tous et où la planète est protégée pour les générations futures.
+  </p>
 
-    <section class="mission-card">
-      <h2>Nos Valeurs</h2>
-      <div class="values-grid">
-        <span class="value-tag">Inclusion</span>
-        <span class="value-tag">Équité</span>
-        <span class="value-tag">Solidarité</span>
-        <span class="value-tag">Durabilité</span>
-      </div>
-    </section>
+  <h2>Nos valeurs</h2>
+  <p>Inclusion, Équité, Solidarité, Durabilité.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
+  <p>No enrégistrement au MAST: <strong>STW-39322</strong></p>
+
+  <div class="socials">
+    <a href="mailto:Fea05985@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.instagram.com/foyerespoir&action" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com/fea404961392399" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
   </div>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
-    <div class="socials">
-      <a href="mailto:Fea05985@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://www.instagram.com/foyerespoir&action" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/fea404961392399" target="_blank"><i class="fab fa-x-twitter"></i></a>
-    </div>
-  </footer>
+<!-- ✅ SCRIPT KI KONEKTE MENU A -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
 
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      if(menu.classList.contains('active')) {
-        menuBtn.classList.replace('fa-bars', 'fa-xmark');
-      } else {
-        menuBtn.classList.replace('fa-xmark', 'fa-bars');
-      }
-    });
-  </script>
+  menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
