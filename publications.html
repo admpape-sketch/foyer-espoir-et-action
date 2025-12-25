@@ -35,7 +35,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .logo h1 {
@@ -46,9 +47,7 @@
       gap: .5rem;
     }
 
-    .logo i {
-      color: #ffda79;
-    }
+    .logo i { color: #ffda79; }
 
     .nav-links {
       list-style: none;
@@ -63,109 +62,112 @@
       transition: color 0.3s;
     }
 
-    .nav-links a:hover,
-    .nav-links .active {
-      color: #ffda79;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: #fff;
-      border-radius: 3px;
-    }
+    .nav-links a:hover, .nav-links .active { color: #ffda79; }
 
     /* SECTION PRINCIPALE */
-    .publications {
-      padding: 3rem 10%;
+    .publications-container {
+      padding: 4rem 10%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .intro-text {
       text-align: center;
-      background: #fff;
+      margin-bottom: 3rem;
     }
 
-    .publications h2 {
-      color: #00784e;
-      margin-bottom: 1rem;
-    }
+    .intro-text h2 { color: #00784e; font-size: 2.2rem; margin-bottom: 1rem; }
 
+    /* GRID */
     .pub-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      margin-top: 2.5rem;
     }
 
     .pub-card {
-      background: #f1f9f5;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: left;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
+      border: 1px solid #eee;
+      transition: transform 0.3s;
     }
 
-    .pub-card video, .pub-card img, .pub-card audio {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
+    .pub-card:hover { transform: translateY(-10px); }
 
-    .pub-card h4 {
-      color: #00784e;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
+    .pub-media { width: 100%; height: 200px; object-fit: cover; }
+    
+    video.pub-media { background: #000; height: auto; max-height: 250px; }
 
-    .message-text {
-      font-style: italic;
-      background: #fff;
+    .pub-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+
+    .pub-body h4 { color: #00784e; margin-bottom: 0.8rem; font-size: 1.2rem; }
+
+    .pub-body p { font-size: 0.9rem; color: #555; margin-bottom: 1rem; }
+
+    /* SPECIAL MESSAGE BOX */
+    .message-box {
+      background: #f1f9f5;
+      border-left: 5px solid #ffda79;
       padding: 1rem;
-      border-left: 4px solid #ffda79;
-      border-radius: 5px;
+      font-style: italic;
       margin: 1rem 0;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
 
-    .btn-don {
-      display: inline-block;
-      background: #00784e;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: auto;
+    /* BUTTONS */
+    .btn {
+      display: block;
+      width: 100%;
       text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: 600;
+      margin-top: auto;
+      transition: 0.3s;
     }
 
+    .btn-download { background: #00784e; color: #fff; }
+    .btn-download:hover { background: #005a3b; }
+
+    .btn-don { background: #ffda79; color: #222; margin-top: 10px; }
+    .btn-don:hover { background: #fbc531; }
+
+    /* FOOTER */
     footer {
       background: #004d32;
       color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
     }
+
+    .socials { margin-top: 1.5rem; }
+    .socials a { color: #fff; margin: 0 10px; font-size: 1.4rem; }
+
+    /* RESPONSIVE */
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 25px; height: 3px; background: #fff; }
 
     @media (max-width: 768px) {
       .hamburger { display: flex; }
-      .nav-links { 
-        display: none; 
-        flex-direction: column; 
-        width: 100%; 
-        background: #00784e; 
-        position: absolute; 
-        top: 70px; 
-        left: 0; 
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #00784e;
+        position: absolute;
+        top: 70px;
+        left: 0;
         padding: 1rem;
+        text-align: center;
       }
       .nav-links.show { display: flex; }
+      .publications-container { padding: 2rem 5%; }
     }
   </style>
 </head>
@@ -176,76 +178,91 @@
       <div class="logo">
         <h1><i class="fa-solid fa-hand-holding-heart"></i> Foyer Espoir et Action</h1>
       </div>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="mission.html">Notre Mission</a></li>
+        <li><a href="mission.html">Mission</a></li>
         <li><a href="staff.html">Staff</a></li>
-        <li><a href="programmes.html">Nos Programmes</a></li>
-        <li><a href="aider.html">Comment Aider</a></li>
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="aider.html">Aider</a></li>
         <li><a href="publications.html" class="active">Publications</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="publications">
-    <h2>Nos Publications</h2>
-    <p>Découvrez nos derniers contenus pour informer, sensibiliser et inspirer.</p>
+  <main class="publications-container">
+    <div class="intro-text">
+      <h2>Nos Publications</h2>
+      <p>Retrouvez nos dernières vidéos, messages audio et articles de sensibilisation.</p>
+    </div>
 
     <div class="pub-grid">
       
-      <div class="pub-card">
-        <img src="noel 2025.jpg.jpg" alt="Joyeux Noël 2025">
-        <h4>Joyeux Noël 2025</h4>
-        <p>Rempli de paix, d'amour et de santé. Faisons de cette saison un moment de solidarité.</p>
-      </div>
-
-      <div class="pub-card">
-        <video controls>
-          <source src="video.mp4.mp4>
-        </video>
-        <h4>Vidéo d'encouragement</h4>
-        <p>Never give up. Yon mesaj espwa pou tout moun k ap travay pou chanjman.</p>
-      </div>
-
-      <div class="pub-card">
-        <audio controls>
-          <source src="audio1.mp3" type="audio/mp3">
-        </audio>
-        <h4>Parole d'encouragement</h4>
-        <p><strong>Message de Joseph Jr. HENRY</strong></p>
-        <div class="message-text">
-          "Chers bénévoles, chaque sourire que vous offrez est une semence d’espérance. Vous demeurez les artisans silencieux du changement. Ensemble, nous transformons des vies."
+      <article class="pub-card">
+        <img src="noel 2025.jpg.jpg.jpg" alt="Noël 2025" class="pub-media">
+        <div class="pub-body">
+          <h4>Joyeux Noël 2025</h4>
+          <p>Paix, amour et santé. Une saison de solidarité pour transformer des vies ensemble.</p>
         </div>
-        <p style="font-size: 0.85rem; font-weight: bold;">Coordonnateur Général</p>
-      </div>
+      </article>
 
-      <div class="pub-card">
-        <h4>Chronique Entrepreneuriat</h4>
-        <p><em>"Quand tout se ferme, ouvre ta propre porte"</em>. Yon gid pou moun ki vle kòmanse pwòp biznis yo.</p>
-        <a href="chronique_entrepreneuriat.pdf" class="btn-don" download>📥 Télécharger la Chronique</a>
-      </div>
+      <article class="pub-card">
+        <video controls class="pub-media">
+          <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="pub-body">
+          <h4>Vidéo d'encouragement</h4>
+          <p>Yon mesaj espwa pou tout moun k ap travay pou chanjman. Never give up.</p>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-body">
+          <h4>Message du Coordonnateur</h4>
+          <audio controls style="width: 100%; margin-bottom: 1rem;">
+            <source src="audio1.mp3" type="audio/mp3">
+          </audio>
+          <div class="message-box">
+            "Chaque sourire que vous offrez est une semence d’espérance. Vous demeurez les artisans silencieux du changement."
+          </div>
+          <p><strong>Joseph Jr. HENRY</strong><br><small>Coordonnateur Général</small></p>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-body">
+          <h4>Chronique Entrepreneuriat</h4>
+          <p><em>"Quand tout se ferme, ouvre ta propre porte"</em>. Découvrez comment créer vos propres opportunités.</p>
+          <a href="chronique_entrepreneuriat.pdf" class="btn btn-download" download>📥 Télécharger PDF</a>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <img src="image5.jpg.jpg.jpg" alt="Reboisement" class="pub-media">
+        <div class="pub-body">
+          <h4>Agir Ensemble</h4>
+          <p>Retour sur la journée de reboisement dans le grand sud. Initiatives à suivre.</p>
+          <a href="https://wa.me/50939045395?text=Je+souhaite+faire+un+don" target="_blank" class="btn btn-don">💚 Faire un don MonCash</a>
+        </div>
+      </article>
 
     </div>
-  </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
+    <p>&copy; 2025 Foyer Espoir et Action | MAST: STW-39322</p>
     <div class="socials">
-      <a href="mailto:Fea05985@gmail.com" style="color: white; font-size: 1.5rem;"><i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:Fea05985@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.instagram.com/foyerespoir&action" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/fea404961392399" target="_blank"><i class="fab fa-x-twitter"></i></a>
     </div>
   </footer>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+    const ham = document.getElementById('hamburger');
+    const nav = document.getElementById('nav-links');
+    ham.addEventListener('click', () => { nav.classList.toggle('show'); });
   </script>
 </body>
 </html>
-
