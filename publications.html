@@ -17,6 +17,7 @@
       font-family: 'Poppins', sans-serif;
       background: #f7f9f8;
       color: #222;
+      line-height: 1.6;
     }
 
     /* HEADER */
@@ -88,11 +89,16 @@
       background: #fff;
     }
 
+    .publications h2 {
+      color: #00784e;
+      margin-bottom: 1rem;
+    }
+
     .pub-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
     }
 
     .pub-card {
@@ -101,12 +107,30 @@
       padding: 1.5rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       text-align: left;
+      display: flex;
+      flex-direction: column;
     }
 
     .pub-card video, .pub-card img, .pub-card audio {
       width: 100%;
       border-radius: 10px;
       margin-bottom: 1rem;
+    }
+
+    .pub-card h4 {
+      color: #00784e;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .message-text {
+      font-style: italic;
+      background: #fff;
+      padding: 1rem;
+      border-left: 4px solid #ffda79;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
     }
 
     .btn-don {
@@ -116,7 +140,9 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
-      margin-top: 10px;
+      margin-top: auto;
+      text-align: center;
+      font-weight: 600;
     }
 
     footer {
@@ -129,7 +155,16 @@
 
     @media (max-width: 768px) {
       .hamburger { display: flex; }
-      .nav-links { display: none; flex-direction: column; width: 100%; background: #00784e; position: absolute; top: 70px; left: 0; }
+      .nav-links { 
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+        background: #00784e; 
+        position: absolute; 
+        top: 70px; 
+        left: 0; 
+        padding: 1rem;
+      }
       .nav-links.show { display: flex; }
     }
   </style>
@@ -158,67 +193,49 @@
 
   <section class="publications">
     <h2>Nos Publications</h2>
-    <p>Découvrez nos derniers contenus pour informer et inspirer.</p>
+    <p>Découvrez nos derniers contenus pour informer, sensibiliser et inspirer.</p>
 
     <div class="pub-grid">
+      
+      <div class="pub-card">
+        <img src="noel 2025.jpg.jpg.jpg" alt="Joyeux Noël 2025">
+        <h4>Joyeux Noël 2025</h4>
+        <p>Rempli de paix, d'amour et de santé. Faisons de cette saison un moment de solidarité.</p>
+      </div>
+
       <div class="pub-card">
         <video controls>
           <source src="video.mp4" type="video/mp4">
         </video>
         <h4>Vidéo d'encouragement</h4>
-        <p>Never give up.</p>
+        <p>Never give up. Yon mesaj espwa pou tout moun k ap travay pou chanjman.</p>
       </div>
 
       <div class="pub-card">
         <audio controls>
           <source src="audio1.mp3" type="audio/mp3">
         </audio>
-        <h4>Message du Coordonnateur</h4>
-        <p>Un mot pour les bénévoles de Joseph Jr. HENRY.</p>
+        <h4>Parole d'encouragement</h4>
+        <p><strong>Message de Joseph Jr. HENRY</strong></p>
+        <div class="message-text">
+          "Chers bénévoles, chaque sourire que vous offrez est une semence d’espérance. Vous demeurez les artisans silencieux du changement. Ensemble, nous transformons des vies."
+        </div>
+        <p style="font-size: 0.85rem; font-weight: bold;">Coordonnateur Général</p>
       </div>
 
       <div class="pub-card">
         <h4>Chronique Entrepreneuriat</h4>
-        <p>Quand tout se ferme, ouvre ta propre porte.</p>
-        <a href="chronique_entrepreneuriat.pdf" class="btn-don" download>📥 Télécharger PDF</a>
+        <p><em>"Quand tout se ferme, ouvre ta propre porte"</em>. Yon gid pou moun ki vle kòmanse pwòp biznis yo.</p>
+        <a href="chronique_entrepreneuriat.pdf" class="btn-don" download>📥 Télécharger la Chronique</a>
       </div>
 
-      <div class="pub-card">
-        <img src="noel2025.jpg.jpg" alt="Noel 2025">
-        <h4>Joyeux Noël 2025</h4>
-        <p>Paix, santé, joie et partage.</p>
-      </div>
     </div>
   </section>
-  
- <h4>Une parole d’encouragement du Coordonnateur Général</h4>
-        <p>Une parole d’encouragement du Coordonnateur Général aux bénévoles du Foyer Espoir et Action
 
-</p>Chers bénévoles,
-Chères amies et amis du Foyer Espoir et Action,
-
-</p>Je tiens à vous adresser, en mon nom et au nom de toute l’équipe de coordination, mes plus sincères félicitations et remerciements pour votre engagement exemplaire.
-Chaque sourire que vous offrez, chaque heure que vous consacrez, chaque geste que vous posez est une semence d’espérance qui fait grandir notre mission.
-
-Dans un contexte souvent difficile, vous demeurez les artisans silencieux du changement, les témoins vivants de la solidarité et de la foi en l’humain. Grâce à vous, notre foyer continue d’être un espace où l’action se joint à l’amour, et l’espérance devient réalité.
-
-Continuez à croire que chaque petit acte de bonté a un grand impact.
-Ensemble, nous faisons plus que servir : nous transformons des vies.
-
-Recevez toute ma gratitude, mon admiration et mes encouragements à poursuivre cette belle aventure humaine, avec la même passion et le même dévouement.
-
-</p>Avec respect et reconnaissance,
-
-
-</p>Joseph Jr. HENRY
-Coordonnateur Général
-Foyer Espoir et Action
-        </p>
-      </div>
   <footer>
     <p>&copy; 2025 Foyer Espoir et Action - Tous droits réservés.</p>
     <div class="socials">
-      <a href="mailto:Fea05985@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:Fea05985@gmail.com" style="color: white; font-size: 1.5rem;"><i class="fa-solid fa-envelope"></i></a>
     </div>
   </footer>
 
@@ -231,5 +248,3 @@ Foyer Espoir et Action
   </script>
 </body>
 </html>
-
-
